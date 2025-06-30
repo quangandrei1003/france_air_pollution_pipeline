@@ -3,10 +3,10 @@
 .DS_Store
 airflow_settings.yaml
 __pycache__/
-.astro
 .venv
+.astro
 airflow-webserver.pid
 webserver_config.py
 airflow.cfg
 airflow.db
-include/keys/*
+keys
