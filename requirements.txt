@@ -3,3 +3,4 @@ pandas
 numpy
 requests
 python-dotenv
+astronomer-cosmos==1.7.0

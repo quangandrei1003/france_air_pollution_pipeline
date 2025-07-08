@@ -10,3 +10,5 @@ webserver_config.py
 airflow.cfg
 airflow.db
 keys
+dbt/france_air_pollution/target/*
+!dbt/france_air_pollution/target/.gitkeep

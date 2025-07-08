@@ -1,10 +1,10 @@
 AIR_POLLUTION_COLUMN_MAP = {
-    "components.co": "Carbon_Monoxide_CO",
-    "components.no": "Nitric_oxide_NO",
-    "components.no2": "Nitrogen_Dioxide_NO2",
-    "components.o3": "Ozone_O3",
-    "components.so2": "Sulfur_Dioxide_SO2",
-    "components.pm2_5": "PM2_5",
-    "components.pm10": "PM10",
-    "components.nh3": "NH3",
+    'components.co': 'carbon_monoxide_co',
+    'components.no': 'nitric_oxide_no',
+    'components.no2': 'nitrogen_dioxide_no2',
+    'components.o3': 'ozone_o3',
+    'components.so2': 'sulfur_dioxide_so2',
+    'components.pm2_5': 'pm2_5',
+    'components.pm10': 'pm10',
+    'components.nh3': 'nh3'
 }
