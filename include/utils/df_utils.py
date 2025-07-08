@@ -1,3 +1,4 @@
+from datetime import UTC, datetime
 from typing import List
 import pandas as pd
 from include.constants.air_pollution import AIR_POLLUTION_COLUMN_MAP
@@ -122,6 +123,25 @@ def convert_date_time_columns(df: pd.DataFrame, columns: List[str] = None) -> pd
     result_df = df.copy()
     for col in columns:
         result_df[col] = pd.to_datetime(result_df[col], unit='s')
+
+    return result_df
+
+
+def add_audit_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add created_at and updated_at columns to DataFrame with current UTC timestamp.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame
+
+    Returns:
+        pd.DataFrame: DataFrame with added audit columns
+    """
+    result_df = df.copy()
+    current_utc = datetime.now(UTC)
+
+    result_df['created_at'] = current_utc
+    result_df['updated_at'] = current_utc
 
     return result_df
 

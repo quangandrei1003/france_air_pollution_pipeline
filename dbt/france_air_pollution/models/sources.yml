@@ -1,0 +1,68 @@
+version: 2
+
+sources:
+  - name: raw
+    database: paris-air-pollution-quangnc
+    schema: raw 
+    description: air pollution raw data loaded into BigQuery from GCS
+    tables:
+      - name: airpollution 
+        columns:
+          - name: city_index 
+            tests:
+              - not_null 
+          - name: carbon_monoxide_co
+            tests: 
+              - not_null 
+              - test_is_float: 
+                  expected_data_type: float64
+          - name: nitric_oxide_no
+            tests:
+              - not_null 
+              - test_is_float:
+                  expected_data_type: float64
+          - name: nitrogen_dioxide_no2
+            tests:
+              - not_null 
+              - test_is_float:
+                  expected_data_type: float64
+          - name: ozone_o3
+            tests:
+              - not_null 
+              - test_is_float:
+                  expected_data_type: float64
+          - name: sulfur_dioxide_so2
+            tests:
+              - not_null 
+              - test_is_float:
+                  expected_data_type: float64
+          - name: pm2_5
+            tests:
+              - not_null 
+              - test_is_float:
+                  expected_data_type: float64
+          - name: pm10
+            tests:
+              - not_null 
+              - test_is_float:
+                  expected_data_type: float64
+          - name: nh3
+            tests:
+              - not_null 
+              - test_is_float:
+                  expected_data_type: float64
+      - name: cities
+        columns:
+          - name: city_index
+            tests:
+              - not_null
+              - unique
+          - name: city
+            tests:
+              - not_null
+          - name: latitude
+            tests:
+              - not_null
+          - name: longitude
+            tests:
+              - not_null

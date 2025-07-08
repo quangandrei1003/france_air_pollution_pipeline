@@ -1,6 +1,7 @@
 from airflow.decorators import dag
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from datetime import datetime
-from include.air_pollution.air_pollution_task_flow import (
+from include.air_pollution.task_flow import (
     get_start_end_time_history_pollution,
     combine_cities_with_timerange,
     get_metropolitan_cities,
@@ -32,8 +33,17 @@ def history_air_pollution():
         payload=pollution_data)
     gcs_paths = load_air_pollution_to_gcs.expand(
         payload=formatted_data)
-    gcs_paths >> load_to_bigquery_task_group(gcs_paths=gcs_paths,
+    load_to_bq = load_to_bigquery_task_group(gcs_paths=gcs_paths,
                                              metropolitan_cities=metropolitan_cities)
+    trigger_dbt_transformation = TriggerDagRunOperator(
+        task_id="dbt_transformation",
+        trigger_dag_id="dbt_transform_bq",
+        wait_for_completion=True,
+        poke_interval=60,
+        conf={"is_full_refresh": True},
+    )
+
+    gcs_paths >> load_to_bq >> trigger_dbt_transformation
 
 
 dag = history_air_pollution()

@@ -1,632 +1,737 @@
 [
     {
-        "City_index": 1,
+        "City_Index": 1,
         "Latitude": "48.8567",
         "Longitude": "2.3522",
-        "City": "Paris"
+        "City": "Paris",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 2,
+        "City_Index": 2,
         "Latitude": "43.2964",
         "Longitude": "5.3700",
-        "City": "Marseille"
+        "City": "Marseille",
+        "Region": "Provence-Alpes-Côte d’Azur"
     },
     {
-        "City_index": 3,
+        "City_Index": 3,
         "Latitude": "45.7600",
         "Longitude": "4.8400",
-        "City": "Lyon"
+        "City": "Lyon",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 4,
+        "City_Index": 4,
         "Latitude": "43.6045",
         "Longitude": "1.4440",
-        "City": "Toulouse"
+        "City": "Toulouse",
+        "Region": "Occitanie"
     },
     {
-        "City_index": 5,
+        "City_Index": 5,
         "Latitude": "43.7034",
         "Longitude": "7.2663",
-        "City": "Nice"
+        "City": "Nice",
+        "Region": "Provence-Alpes-Côte d’Azur"
     },
     {
-        "City_index": 6,
+        "City_Index": 6,
         "Latitude": "47.2181",
         "Longitude": "-1.5528",
-        "City": "Nantes"
+        "City": "Nantes",
+        "Region": "Pays de la Loire"
     },
     {
-        "City_index": 7,
+        "City_Index": 7,
         "Latitude": "43.6119",
         "Longitude": "3.8772",
-        "City": "Montpellier"
+        "City": "Montpellier",
+        "Region": "Occitanie"
     },
     {
-        "City_index": 8,
+        "City_Index": 8,
         "Latitude": "48.5833",
         "Longitude": "7.7458",
-        "City": "Strasbourg"
+        "City": "Strasbourg",
+        "Region": "Grand Est"
     },
     {
-        "City_index": 9,
+        "City_Index": 9,
         "Latitude": "44.8400",
         "Longitude": "-0.5800",
-        "City": "Bordeaux"
+        "City": "Bordeaux",
+        "Region": "Nouvelle-Aquitaine"
     },
     {
-        "City_index": 10,
+        "City_Index": 10,
         "Latitude": "50.6278",
         "Longitude": "3.0583",
-        "City": "Lille"
+        "City": "Lille",
+        "Region": "Hauts-de-France"
     },
     {
-        "City_index": 11,
+        "City_Index": 11,
         "Latitude": "48.1147",
         "Longitude": "-1.6794",
-        "City": "Rennes"
+        "City": "Rennes",
+        "Region": "Bretagne"
     },
     {
-        "City_index": 12,
+        "City_Index": 12,
         "Latitude": "49.2628",
         "Longitude": "4.0347",
-        "City": "Reims"
+        "City": "Reims",
+        "Region": "Grand Est"
     },
     {
-        "City_index": 13,
+        "City_Index": 13,
         "Latitude": "43.1258",
         "Longitude": "5.9306",
-        "City": "Toulon"
+        "City": "Toulon",
+        "Region": "Provence-Alpes-Côte d’Azur"
     },
     {
-        "City_index": 14,
+        "City_Index": 14,
         "Latitude": "45.4347",
         "Longitude": "4.3903",
-        "City": "Saint-Étienne"
+        "City": "Saint-Étienne",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 15,
+        "City_Index": 15,
         "Latitude": "49.4900",
         "Longitude": "0.1000",
-        "City": "Le Havre"
+        "City": "Le Havre",
+        "Region": "Normandie"
     },
     {
-        "City_index": 16,
+        "City_Index": 16,
         "Latitude": "45.1715",
         "Longitude": "5.7224",
-        "City": "Grenoble"
+        "City": "Grenoble",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 17,
+        "City_Index": 17,
         "Latitude": "47.3167",
         "Longitude": "5.0167",
-        "City": "Dijon"
+        "City": "Dijon",
+        "Region": "Bourgogne-Franche-Comté"
     },
     {
-        "City_index": 18,
+        "City_Index": 18,
         "Latitude": "47.4736",
         "Longitude": "-0.5542",
-        "City": "Angers"
+        "City": "Angers",
+        "Region": "Pays de la Loire"
     },
     {
-        "City_index": 19,
+        "City_Index": 19,
         "Latitude": "45.7667",
         "Longitude": "4.8803",
-        "City": "Villeurbanne"
+        "City": "Villeurbanne",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 20,
+        "City_Index": 20,
         "Latitude": "43.8380",
         "Longitude": "4.3610",
-        "City": "Nîmes"
+        "City": "Nîmes",
+        "Region": "Occitanie"
     },
     {
-        "City_index": 21,
+        "City_Index": 21,
         "Latitude": "45.7831",
         "Longitude": "3.0824",
-        "City": "Clermont-Ferrand"
+        "City": "Clermont-Ferrand",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 22,
+        "City_Index": 22,
         "Latitude": "43.5263",
         "Longitude": "5.4454",
-        "City": "Aix-en-Provence"
+        "City": "Aix-en-Provence",
+        "Region": "Provence-Alpes-Côte d’Azur"
     },
     {
-        "City_index": 23,
+        "City_Index": 23,
         "Latitude": "48.0077",
         "Longitude": "0.1984",
-        "City": "Le Mans"
+        "City": "Le Mans",
+        "Region": "Pays de la Loire"
     },
     {
-        "City_index": 24,
+        "City_Index": 24,
         "Latitude": "48.3900",
         "Longitude": "-4.4900",
-        "City": "Brest"
+        "City": "Brest",
+        "Region": "Bretagne"
     },
     {
-        "City_index": 25,
+        "City_Index": 25,
         "Latitude": "47.3936",
         "Longitude": "0.6892",
-        "City": "Tours"
+        "City": "Tours",
+        "Region": "Centre-Val de Loire"
     },
     {
-        "City_index": 26,
+        "City_Index": 26,
         "Latitude": "49.8920",
         "Longitude": "2.2990",
-        "City": "Amiens"
+        "City": "Amiens",
+        "Region": "Hauts-de-France"
     },
     {
-        "City_index": 27,
+        "City_Index": 27,
         "Latitude": "45.8353",
         "Longitude": "1.2625",
-        "City": "Limoges"
+        "City": "Limoges",
+        "Region": "Nouvelle-Aquitaine"
     },
     {
-        "City_index": 28,
+        "City_Index": 28,
         "Latitude": "45.9160",
         "Longitude": "6.1330",
-        "City": "Annecy"
+        "City": "Annecy",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 29,
+        "City_Index": 29,
         "Latitude": "48.8352",
         "Longitude": "2.2409",
-        "City": "Boulogne-Billancourt"
+        "City": "Boulogne-Billancourt",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 30,
+        "City_Index": 30,
         "Latitude": "42.6986",
         "Longitude": "2.8956",
-        "City": "Perpignan"
+        "City": "Perpignan",
+        "Region": "Occitanie"
     },
     {
-        "City_index": 31,
+        "City_Index": 31,
         "Latitude": "49.1203",
         "Longitude": "6.1778",
-        "City": "Metz"
+        "City": "Metz",
+        "Region": "Grand Est"
     },
     {
-        "City_index": 32,
+        "City_Index": 32,
         "Latitude": "47.2400",
         "Longitude": "6.0200",
-        "City": "Besançon"
+        "City": "Besançon",
+        "Region": "Bourgogne-Franche-Comté"
     },
     {
-        "City_index": 33,
+        "City_Index": 33,
         "Latitude": "47.9025",
         "Longitude": "1.9090",
-        "City": "Orléans"
+        "City": "Orléans",
+        "Region": "Centre-Val de Loire"
     },
     {
-        "City_index": 34,
+        "City_Index": 34,
         "Latitude": "48.9356",
         "Longitude": "2.3539",
-        "City": "Saint-Denis"
+        "City": "Saint-Denis",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 35,
+        "City_Index": 35,
         "Latitude": "49.4428",
         "Longitude": "1.0886",
-        "City": "Rouen"
+        "City": "Rouen",
+        "Region": "Normandie"
     },
     {
-        "City_index": 36,
+        "City_Index": 36,
         "Latitude": "48.8611",
         "Longitude": "2.4436",
-        "City": "Montreuil"
+        "City": "Montreuil",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 37,
+        "City_Index": 37,
         "Latitude": "48.9500",
         "Longitude": "2.2500",
-        "City": "Argenteuil"
+        "City": "Argenteuil",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 38,
+        "City_Index": 38,
         "Latitude": "47.7500",
         "Longitude": "7.3400",
-        "City": "Mulhouse"
+        "City": "Mulhouse",
+        "Region": "Grand Est"
     },
     {
-        "City_index": 39,
+        "City_Index": 39,
         "Latitude": "49.1800",
         "Longitude": "-0.3700",
-        "City": "Caen"
+        "City": "Caen",
+        "Region": "Normandie"
     },
     {
-        "City_index": 40,
+        "City_Index": 40,
         "Latitude": "48.6936",
         "Longitude": "6.1846",
-        "City": "Nancy"
+        "City": "Nancy",
+        "Region": "Grand Est"
     },
     {
-        "City_index": 41,
+        "City_Index": 41,
         "Latitude": "50.6901",
         "Longitude": "3.1817",
-        "City": "Roubaix"
+        "City": "Roubaix",
+        "Region": "Hauts-de-France"
     },
     {
-        "City_index": 42,
+        "City_Index": 42,
         "Latitude": "50.7239",
         "Longitude": "3.1612",
-        "City": "Tourcoing"
+        "City": "Tourcoing",
+        "Region": "Hauts-de-France"
     },
     {
-        "City_index": 43,
+        "City_Index": 43,
         "Latitude": "48.8988",
         "Longitude": "2.1969",
-        "City": "Nanterre"
+        "City": "Nanterre",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 44,
+        "City_Index": 44,
         "Latitude": "48.7875",
         "Longitude": "2.3928",
-        "City": "Vitry-sur-Seine"
+        "City": "Vitry-sur-Seine",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 45,
+        "City_Index": 45,
         "Latitude": "48.7911",
         "Longitude": "2.4628",
-        "City": "Créteil"
+        "City": "Créteil",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 46,
+        "City_Index": 46,
         "Latitude": "46.5800",
         "Longitude": "0.3400",
-        "City": "Poitiers"
+        "City": "Poitiers",
+        "Region": "Nouvelle-Aquitaine"
     },
     {
-        "City_index": 47,
+        "City_Index": 47,
         "Latitude": "48.9131",
         "Longitude": "2.3831",
-        "City": "Aubervilliers"
+        "City": "Aubervilliers",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 48,
+        "City_Index": 48,
         "Latitude": "48.9386",
         "Longitude": "2.4906",
-        "City": "Aulnay-sous-Bois"
+        "City": "Aulnay-sous-Bois",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 49,
+        "City_Index": 49,
         "Latitude": "51.0383",
         "Longitude": "2.3775",
-        "City": "Dunkerque"
+        "City": "Dunkerque",
+        "Region": "Hauts-de-France"
     },
     {
-        "City_index": 50,
+        "City_Index": 50,
         "Latitude": "48.9236",
         "Longitude": "2.2522",
-        "City": "Colombes"
+        "City": "Colombes",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 51,
+        "City_Index": 51,
         "Latitude": "48.8053",
         "Longitude": "2.1350",
-        "City": "Versailles"
+        "City": "Versailles",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 52,
+        "City_Index": 52,
         "Latitude": "48.8978",
         "Longitude": "2.2531",
-        "City": "Courbevoic"
+        "City": "Courbevoic",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 53,
+        "City_Index": 53,
         "Latitude": "48.8760",
         "Longitude": "2.1810",
-        "City": "Rueil-Malmaison"
+        "City": "Rueil-Malmaison",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 54,
+        "City_Index": 54,
         "Latitude": "46.1600",
         "Longitude": "-1.1500",
-        "City": "La Rochelle"
+        "City": "La Rochelle",
+        "Region": "Nouvelle-Aquitaine"
     },
     {
-        "City_index": 55,
+        "City_Index": 55,
         "Latitude": "48.8172",
         "Longitude": "2.5156",
-        "City": "Champigny-sur-Marne"
+        "City": "Champigny-sur-Marne",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 56,
+        "City_Index": 56,
         "Latitude": "43.3000",
         "Longitude": "-0.3700",
-        "City": "Pau"
+        "City": "Pau",
+        "Region": "Nouvelle-Aquitaine"
     },
     {
-        "City_index": 57,
+        "City_Index": 57,
         "Latitude": "48.7994",
         "Longitude": "2.4997",
-        "City": "Saint-Maur-des-Fossés"
+        "City": "Saint-Maur-des-Fossés",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 58,
+        "City_Index": 58,
         "Latitude": "43.5513",
         "Longitude": "7.0128",
-        "City": "Cannes"
+        "City": "Cannes",
+        "Region": "Provence-Alpes-Côte d’Azur"
     },
     {
-        "City_index": 59,
+        "City_Index": 59,
         "Latitude": "43.5808",
         "Longitude": "7.1239",
-        "City": "Antibes"
+        "City": "Antibes",
+        "Region": "Provence-Alpes-Côte d’Azur"
     },
     {
-        "City_index": 60,
+        "City_Index": 60,
         "Latitude": "50.9481",
         "Longitude": "1.8564",
-        "City": "Calais"
+        "City": "Calais",
+        "Region": "Hauts-de-France"
     },
     {
-        "City_index": 61,
+        "City_Index": 61,
         "Latitude": "48.9300",
         "Longitude": "2.4500",
-        "City": "Drancy"
+        "City": "Drancy",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 62,
+        "City_Index": 62,
         "Latitude": "44.8386",
         "Longitude": "-0.6436",
-        "City": "Mérignac"
+        "City": "Mérignac",
+        "Region": "Nouvelle-Aquitaine"
     },
     {
-        "City_index": 63,
+        "City_Index": 63,
         "Latitude": "47.2736",
         "Longitude": "-2.2139",
-        "City": "Saint-Nazaire"
+        "City": "Saint-Nazaire",
+        "Region": "Pays de la Loire"
     },
     {
-        "City_index": 64,
+        "City_Index": 64,
         "Latitude": "41.9267",
         "Longitude": "8.7369",
-        "City": "Ajaccio"
+        "City": "Ajaccio",
+        "Region": "Corsica"
     },
     {
-        "City_index": 65,
+        "City_Index": 65,
         "Latitude": "48.8239",
         "Longitude": "2.2700",
-        "City": "Issy-les-Moulineaux"
+        "City": "Issy-les-Moulineaux",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 66,
+        "City_Index": 66,
         "Latitude": "48.8478",
         "Longitude": "2.5528",
-        "City": "Noisy-le-Grand"
+        "City": "Noisy-le-Grand",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 67,
+        "City_Index": 67,
         "Latitude": "45.6978",
         "Longitude": "4.8867",
-        "City": "Vénissieux"
+        "City": "Vénissieux",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 68,
+        "City_Index": 68,
         "Latitude": "49.0361",
         "Longitude": "2.0631",
-        "City": "Cergy"
+        "City": "Cergy",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 69,
+        "City_Index": 69,
         "Latitude": "48.8950",
         "Longitude": "2.2872",
-        "City": "Levallois-Perret"
+        "City": "Levallois-Perret",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 70,
+        "City_Index": 70,
         "Latitude": "44.8067",
         "Longitude": "-0.6311",
-        "City": "Pessac"
+        "City": "Pessac",
+        "Region": "Nouvelle-Aquitaine"
     },
     {
-        "City_index": 71,
+        "City_Index": 71,
         "Latitude": "44.9333",
         "Longitude": "4.8917",
-        "City": "Valence"
+        "City": "Valence",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 72,
+        "City_Index": 72,
         "Latitude": "48.8078",
         "Longitude": "2.3747",
-        "City": "Ivry-sur-Seine"
+        "City": "Ivry-sur-Seine",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 73,
+        "City_Index": 73,
         "Latitude": "48.9044",
         "Longitude": "2.3064",
-        "City": "Clichy"
+        "City": "Clichy",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 74,
+        "City_Index": 74,
         "Latitude": "43.1000",
         "Longitude": "5.8830",
-        "City": "La Seyne-sur-Mer"
+        "City": "La Seyne-sur-Mer",
+        "Region": "Provence-Alpes-Côte d’Azur"
     },
     {
-        "City_index": 75,
+        "City_Index": 75,
         "Latitude": "48.7539",
         "Longitude": "2.2975",
-        "City": "Antony"
+        "City": "Antony",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 76,
+        "City_Index": 76,
         "Latitude": "48.2997",
         "Longitude": "4.0792",
-        "City": "Troyes"
+        "City": "Troyes",
+        "Region": "Grand Est"
     },
     {
-        "City_index": 77,
+        "City_Index": 77,
         "Latitude": "49.6333",
         "Longitude": "-1.6000",
-        "City": "Cherbourg"
+        "City": "Cherbourg",
+        "Region": "Normandie"
     },
     {
-        "City_index": 78,
+        "City_Index": 78,
         "Latitude": "48.8881",
         "Longitude": "2.2686",
-        "City": "Neuilly-sur-Seine"
+        "City": "Neuilly-sur-Seine",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 79,
+        "City_Index": 79,
         "Latitude": "48.8966",
         "Longitude": "2.4017",
-        "City": "Pantin"
+        "City": "Pantin",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 80,
+        "City_Index": 80,
         "Latitude": "48.9956",
         "Longitude": "2.3808",
-        "City": "Sarcelles"
+        "City": "Sarcelles",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 81,
+        "City_Index": 81,
         "Latitude": "45.5700",
         "Longitude": "5.9118",
-        "City": "Chambéry"
+        "City": "Chambéry",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 82,
+        "City_Index": 82,
         "Latitude": "48.8710",
         "Longitude": "2.3850",
-        "City": "Bellevue"
+        "City": "Bellevue",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 83,
+        "City_Index": 83,
         "Latitude": "48.9387",
         "Longitude": "2.4614",
-        "City": "Le Blanc-Mesnil"
+        "City": "Le Blanc-Mesnil",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 84,
+        "City_Index": 84,
         "Latitude": "47.7500",
         "Longitude": "-3.3600",
-        "City": "Lorient"
+        "City": "Lorient",
+        "Region": "Bretagne"
     },
     {
-        "City_index": 85,
+        "City_Index": 85,
         "Latitude": "49.4303",
         "Longitude": "2.0952",
-        "City": "Beauvais"
+        "City": "Beauvais",
+        "Region": "Hauts-de-France"
     },
     {
-        "City_index": 86,
+        "City_Index": 86,
         "Latitude": "48.8058",
         "Longitude": "2.4378",
-        "City": "Maisons-Alfort"
+        "City": "Maisons-Alfort",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 87,
+        "City_Index": 87,
         "Latitude": "48.9603",
         "Longitude": "2.8883",
-        "City": "Meaux"
+        "City": "Meaux",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 88,
+        "City_Index": 88,
         "Latitude": "48.7919",
         "Longitude": "2.3636",
-        "City": "Villejuif"
+        "City": "Villejuif",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 89,
+        "City_Index": 89,
         "Latitude": "48.8833",
         "Longitude": "2.6000",
-        "City": "Chelles"
+        "City": "Chelles",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 90,
+        "City_Index": 90,
         "Latitude": "48.9553",
         "Longitude": "2.3092",
-        "City": "Épinay-sur-Seine"
+        "City": "Épinay-sur-Seine",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 91,
+        "City_Index": 91,
         "Latitude": "48.9022",
         "Longitude": "2.4828",
-        "City": "Bondy"
+        "City": "Bondy",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 92,
+        "City_Index": 92,
         "Latitude": "48.9106",
         "Longitude": "2.4397",
-        "City": "Bobigny"
+        "City": "Bobigny",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 93,
+        "City_Index": 93,
         "Latitude": "49.8486",
         "Longitude": "3.2864",
-        "City": "Saint-Quentin"
+        "City": "Saint-Quentin",
+        "Region": "Hauts-de-France"
     },
     {
-        "City_index": 94,
+        "City_Index": 94,
         "Latitude": "47.6559",
         "Longitude": "-2.7603",
-        "City": "Vannes"
+        "City": "Vannes",
+        "Region": "Bretagne"
     },
     {
-        "City_index": 95,
+        "City_Index": 95,
         "Latitude": "48.6239",
         "Longitude": "2.4294",
-        "City": "Évry"
+        "City": "Évry",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 96,
+        "City_Index": 96,
         "Latitude": "48.8014",
         "Longitude": "2.2628",
-        "City": "Clamart"
+        "City": "Clamart",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 97,
+        "City_Index": 97,
         "Latitude": "45.7768",
         "Longitude": "4.9186",
-        "City": "Vaulx-en-Velin"
+        "City": "Vaulx-en-Velin",
+        "Region": "Auvergne-Rhône-Alpes"
     },
     {
-        "City_index": 98,
+        "City_Index": 98,
         "Latitude": "48.9372",
         "Longitude": "2.1644",
-        "City": "Sartrouville"
+        "City": "Sartrouville",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 99,
+        "City_Index": 99,
         "Latitude": "48.8517",
         "Longitude": "2.4772",
-        "City": "Fontenay-sous-Bois"
+        "City": "Fontenay-sous-Bois",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 100,
+        "City_Index": 100,
         "Latitude": "43.6644",
         "Longitude": "7.1489",
-        "City": "Cagnes-sur-Mer"
+        "City": "Cagnes-sur-Mer",
+        "Region": "Provence-Alpes-Côte d’Azur"
     },
     {
-        "City_index": 101,
+        "City_Index": 101,
         "Latitude": "43.4900",
         "Longitude": "-1.4800",
-        "City": "Bayonne"
+        "City": "Bayonne",
+        "Region": "Nouvelle-Aquitaine"
     },
     {
-        "City_index": 102,
+        "City_Index": 102,
         "Latitude": "48.9333",
         "Longitude": "2.5333",
-        "City": "Sevran"
+        "City": "Sevran",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 103,
+        "City_Index": 103,
         "Latitude": "48.6139",
         "Longitude": "2.4820",
-        "City": "Corbeil-Essonnes"
+        "City": "Corbeil-Essonnes",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 104,
+        "City_Index": 104,
         "Latitude": "48.9123",
         "Longitude": "2.3342",
-        "City": "Saint-Ouen"
+        "City": "Saint-Ouen",
+        "Region": "Île-de-France"
     },
     {
-        "City_index": 105,
+        "City_Index": 105,
         "Latitude": "48.7309",
         "Longitude": "2.2713",
-        "City": "Massy"
+        "City": "Massy",
+        "Region": "Île-de-France"
     }
 ]

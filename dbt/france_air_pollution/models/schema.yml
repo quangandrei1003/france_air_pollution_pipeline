@@ -1,0 +1,220 @@
+version: 2
+
+models:
+  - name: staging_cities
+    description: >
+      A staging view containing French metropolitan cities with their geographical 
+      coordinates and unique identifiers.
+    columns:
+      - name: city_id
+        tests:
+          - unique
+          - not_null
+      - name: city
+        tests:
+          - not_null
+      - name: latitude
+        tests:
+          - not_null
+      - name: longitude
+        tests:
+          - not_null
+
+  - name: staging_air_pollution
+    description: >
+      Air pollution data collected hourly for French metropolitan cities, 
+      including pollutant measurements and air quality indices. 
+      This table is joined with the staging cities table.
+    columns:
+      - name: city_id
+        tests:
+          - not_null
+          - relationships:
+              field: city_index
+              to: source('raw','cities')
+      - name: pollution_quality
+        tests:
+          - accepted_values:
+              values:
+                - 'Very_Poor'
+                - 'Poor'
+                - 'Moderate'
+                - 'Fair'
+                - 'Good'
+      - name: sulfur_dioxide_so2
+        description: Concentration of sulfur dioxide (SO2) in μg/m³
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+
+      - name: nitrogen_dioxide_no2
+        description: Concentration of nitrogen dioxide (NO2) in μg/m³
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+
+      - name: pm10
+        description: Concentration of particulate matter ≤10 micrometers in μg/m³
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+
+      - name: pm2_5
+        description: Concentration of particulate matter ≤2.5 micrometers in μg/m³
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+
+      - name: ozone_o3
+        description: Concentration of ozone (O3) in μg/m³
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+
+      - name: carbon_monoxide_co
+        description: Concentration of carbon monoxide (CO) in μg/m³
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+
+      - name: nh3
+        description: Concentration of ammonia (NH3) in μg/m³
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+
+      - name: nitric_oxide_no
+        description: Concentration of nitric oxide (NO) in μg/m³
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+
+  - name: fact_air_pollution
+    description: >
+      Fact table containing air pollution measurements and quality 
+      indices for French metropolitan cities.
+    tests:
+      - test_latest_datetime_by_city:
+          group_by_column: city_id
+          datetime_column: dt
+          timezone: Europe/Paris
+    columns:
+      - name: date
+        description: Date of the pollution measurement in YYYY-MM-DD format
+        tests:
+          - not_null
+
+    
+  - name: dim_cities
+    description: >
+      Dimension table containing French metropolitan cities information 
+      including geographical coordinates and regions. This table is
+      versioned using DBT snapshots.
+    columns:
+      - name: city_id
+        description: Unique identifier for each city
+        tests:
+          - unique
+          - not_null
+
+      - name: city
+        description: Name of the metropolitan city
+        tests:
+          - not_null
+          - unique
+
+      - name: latitude
+        description: Geographical latitude coordinate
+        tests:
+          - not_null
+
+      - name: longitude
+        description: Geographical longitude coordinate
+        tests:
+          - not_null
+
+      - name: region
+        description: Administrative region of the city
+        tests:
+          - not_null
+      
+  - name: agg_pollution_by_day
+    description: >
+      This table contains daily aggregated air pollution data. 
+      It measures the average of various pollutants per day for each city and 
+      includes an overall air quality classification for each day.
+    tests:
+      - test_latest_datetime_by_city:
+          group_by_column: city
+          datetime_column: date
+          timezone: Europe/Paris
+    columns:
+      - name: pollution_quality
+        tests:
+          - accepted_values:
+              values:
+                - 'Very_Poor'
+                - 'Poor'
+                - 'Moderate'
+                - 'Fair'
+                - 'Good'
+      - name: avg_SO2
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+      - name: avg_NO2
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+      - name: avg_PM10
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+      - name: avg_PM2_5
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+      - name: avg_O3
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+      - name: avg_CO
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+      - name: avg_NH3
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+      - name: avg_NO
+        tests:
+          - not_null
+          - test_is_float:
+              expected_data_type: float64
+      - name: city
+        tests:
+          - not_null
+      - name: region
+        tests:
+          - not_null
+      - name: count_days
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1]
+              quote: false

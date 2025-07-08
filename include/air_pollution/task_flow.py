@@ -7,7 +7,7 @@ from include.config.env_config import load_gcs_bucket_name
 from include.constants.date_time import ONE_MINUTE, PARIS_TZ
 from include.constants.gcp import BQ_DATASET_RAW, BQ_RAW_CITIES_TABLE_NAME
 from include.utils.date_utils import get_prev_day_start_end_timestamps
-from include.utils.df_utils import clean_air_pollution_df, json_to_df, lowercase_df_columns
+from include.utils.df_utils import add_audit_columns, clean_air_pollution_df, json_to_df, lowercase_df_columns
 from include.utils.gcp_path_utils import build_gcs_pollution_path, get_gcs_prev_date_prefix
 from include.constants.air_pollution import AIR_POLLUTION_COLUMN_MAP
 from include.utils.str_utils import slugify
@@ -17,27 +17,32 @@ from include.utils.str_utils import slugify
 def get_start_end_time_history_pollution(start_date: datetime, end_date: datetime = None):
     """Generates timestamps for air pollution data retrieval period.
     This function creates a dictionary containing start and end timestamps for querying
-    air pollution historical data. If no end date is provided, it uses the current time
+    air pollution historical data. If no end date is provided, it uses the yesterday
     as the end point.
     Args:
         start_date (datetime): The starting date in format 'DD-MM-YYYY'
         end_date (datetime, optional): The ending date in format 'DD-MM-YYYY'. 
-            Defaults to None, in which case current time is used.
+            Defaults to None, in which case yesterday is used.
 
     Returns:
         dict: A dictionary containing:
             - 'start_time' (int): Unix timestamp for the start date
-            - 'end_time' (int): Unix timestamp for the end date or current time
+            - 'end_time' (int): Unix timestamp for the end date, default is set to yesterday. 
 
     Example:
         >>> get_start_end_time_history_pollution('01-01-2023')
         {'start_time': 1672531200, 'end_time': 1693526400}
     """
 
+    start_time = int(datetime.strptime(start_date, "%d-%m-%Y").timestamp())
+    end_time = (
+        int(datetime.strptime(end_date, "%d-%m-%Y").timestamp())
+        if end_date else get_prev_day_start_end_timestamps(tz=PARIS_TZ)[1]
+    )
+
     time_range = {
-        'start_time': int(datetime.strptime(start_date, "%d-%m-%Y").timestamp()),
-        'end_time': int(datetime.strptime(start_date, "%d-%m-%Y").timestamp())
-        if end_date else int(datetime.now().timestamp())
+        'start_time': start_time,
+        'end_time': end_time
     }
     return time_range
 
@@ -105,15 +110,17 @@ def get_air_pollution(city: dict) -> pd.DataFrame:
             - 'city': Name of the city (str)
     """
     start_time, end_time = city.get('start_time'), city.get('end_time')
+    has_time_range = start_time is not None and end_time is not None
 
-    if start_time is None and end_time is None:
+    if not has_time_range:
         start_time, end_time = get_prev_day_start_end_timestamps(tz=PARIS_TZ)
     df_pollution = fetch_history_air_pollution_data(start_time=start_time,
                                                     end_time=end_time,
                                                     city=city)
     return {
         "df": df_pollution,
-        "city": city['city']
+        "city": city['city'],
+        "is_history_task": has_time_range
     }
 
 
@@ -126,10 +133,12 @@ def transform_pollution_with_city(payload: dict) -> dict:
         to_date_time_columns=['dt'],
         to_float_columns=list(AIR_POLLUTION_COLUMN_MAP.values())
     )
+    transformed_df = add_audit_columns(df=transformed_df)
 
     return {
         "df": transformed_df,
-        "city": slugify(payload["city"])
+        "city": slugify(payload["city"]),
+        "is_history_task": payload['is_history_task']
     }
 
 
@@ -151,7 +160,8 @@ def load_air_pollution_to_gcs(payload: dict) -> None:
         str: GCS path where the parquet file is stored
     """
     df, city_name = payload['df'], payload['city']
-    gcs_path = build_gcs_pollution_path(city_name=city_name)
+    gcs_path = build_gcs_pollution_path(city_name=city_name,
+                                        is_history=payload['is_history_task'])
     air_pollution_parquet = df_to_parquet(df=df)
     upload_gcs_path = write_gcs(local_path=air_pollution_parquet,
                                 gcs_path=gcs_path,

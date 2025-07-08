@@ -18,10 +18,11 @@ with open(json_path, "r", encoding="utf-8") as file:
 for index, city in enumerate(french_cities, start=1):
     if int(city["population"]) >= LARGE_POPULATION_NUMBER:
         metropolitan_city = {
-            "City_index": index,
+            "City_Index": index,
             "Latitude": city["lat"],
             "Longitude": city["lng"],
             "City": city["city"],
+            "Region": city["admin_name"]
         }
 
         metropolitan_cities.append(metropolitan_city)

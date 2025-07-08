@@ -1,14 +1,15 @@
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.providers.google.cloud.hooks.bigquery import BigQueryHook
+import os
+from pathlib import Path
 import requests
 import pandas as pd
-import os
-from typing import List, Union
 import tempfile
-from pathlib import Path
+from typing import List, Union
 from include.config.env_config import load_gcp_project_id, load_open_weather_api_key
 from include.constants.api import CURRENT_AIR_POLLUTION_ENDPOINT, HISTORY_AIR_POLLUTION_ENDPOINT
 from include.constants.gcp import BQ_DATASET_LOCATION, WRITE_IF_EXISTS_BQ_MODE, BQ_LOAD_JOB_CONFIG
+from include.utils.df_utils import add_audit_columns
 
 
 def fetch_current_air_pollution_data(
@@ -74,29 +75,32 @@ def fetch_history_air_pollution_data(
     api_key = load_open_weather_api_key()
 
     # Send the API request
-    response = requests.get(
-        api_endpoint,
-        params={
-            "lat": city["latitude"],
-            "lon": city["longitude"],
-            "start": start_time,
-            "end": end_time,
-            "appid": api_key,
-        },
-    )
-
-    # Check for errors
-    if response.status_code != 200:
-        print("Error: API request failed with status code", response.status_code)
-        exit()
-
-    # Parse the API response
-    data = response.json()
-    # Convert the data to a dataframe
-    df = pd.json_normalize(data["list"])
-    df['city_Index'] = city['city_index']
-
-    return df
+    try:
+        response = requests.get(
+            api_endpoint,
+            params={
+                "lat": city["latitude"],
+                "lon": city["longitude"],
+                "start": start_time,
+                "end": end_time,
+                "appid": api_key,
+            },
+        )
+        response.raise_for_status()
+        # Parse the API response
+        data = response.json()
+        # Convert the data to a dataframe
+        df = pd.json_normalize(data["list"])
+        df['city_index'] = city['city_index']
+        return df
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err.response.status_code}")
+        raise Exception(
+            f"Failed to fetch air pollution data for {city['city']}", e)
+    except Exception as e:
+        print(f"Error occurred: {e}")
+        raise Exception(
+            f"Fetch air pollution data error for {city['city']}", e)
 
 
 def df_to_parquet(df: pd.DataFrame) -> str:
@@ -161,6 +165,8 @@ def write_bq(
     """
     bq_hook = BigQueryHook(gcp_conn_id="google_cloud_default")
     gcp_project_id = load_gcp_project_id()
+
+    df = add_audit_columns(df=df)
 
     try:
         df.to_gbq(

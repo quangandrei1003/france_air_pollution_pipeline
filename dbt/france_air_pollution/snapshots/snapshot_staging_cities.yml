@@ -1,0 +1,7 @@
+snapshots:
+  - name: snapshot_staging_cities
+    description: Snapshot of staging_cities for SCD tracking.
+    config:
+      strategy: check
+      unique_key: city_id
+      check_cols: ['city', 'region']
