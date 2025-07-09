@@ -233,8 +233,17 @@ astro dev restart
 - Enable the following DAGs by toggling the switch:
   - `prev_day_air_pollution` daily data ingestion.
   - `history_pollution` fetches data from past dates up until the beginning of today.
-  **Note:** When triggering this DAG manually, provide the start date in `DD-MM-YYYY` format as a parameter.
+  **Note:**
+**Note:**  
+- When triggering this DAG manually, provide the start date in `DD-MM-YYYY` format as a parameter.  
+- Also, if you wish to create your own pipeline for your country, which has a different timezone, replace ``"Europe/Paris"`` with your timezone in the following files:  
+  [`include/constants/date_time.py`](./include/constants/date_time.py),  
+  [`models/staging/staging_air_pollution.sql`](./dbt/france_air_pollution/models/staging/staging_air_pollution.sql),  
+  [`models/mart/agg_pollution_by_day.sql`](./dbt/france_air_pollution/models/mart/agg_pollution_by_day.sql).
+
+    
 - To run the pipeline immediately, click the **Trigger DAG** button next to the DAG name.
+
 
 ### Monitoring Pipeline Runs
 - Monitor the status of DAG runs on the Airflow UI.
